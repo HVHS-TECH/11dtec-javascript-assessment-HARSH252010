@@ -1,0 +1,68 @@
+<button onclick="placeOrder()">Order Now</button>
+
+<button onclick="resetOrder()">Reset</button>
+
+<div id="receipt"></div>
+
+<script>
+
+    function resetOrder(){
+
+    document.getElementById("receipt").innerHTML = "";
+}
+
+    let clothingItems = [
+        "Essential Hoodie",
+        "Classic T-Shirt",
+        "Slim Fit Jeans",
+        "Urban Sneakers",
+        "Formal Shirt"
+
+        ];
+
+    let price = 50;
+    
+    function placeOrder(){
+
+       let item = Number(prompt(
+    "Choose an item:\n" +
+    "1. Essential Hoodie\n" +
+    "2. Classic T-shirt\n" +
+    "3. Slim Fit Jeans\n" +
+    "4. Urban Sneakers\n" +
+    "5. Formal Shirt"
+    
+));
+
+if(item < 1 || item > 5){
+    alert("Please choose a number between 1 and 5");
+    return;
+}
+    let name = prompt("Enter your name:");
+    
+    let money = Number(
+        prompt("How much money do you have?")
+    );
+    
+    if(money < price){
+
+        alert("you do not have enough money!");
+
+        return;
+    }
+
+    let change = money - price;
+
+    document.getElementById("receipt").innerHTML =
+    "<h2>Receipt</h2>" +
+    "<p> Name: " + name + "</p>" +
+    "<p>Item: " + clothingItems[item-1] + "</p>" +
+    "<p>Cost: $" + price + "</P>" +
+    "<p>Money Given: $" + money + "</p>" +
+    "<p>Change: $" + change + "</p>";
+    
+    }
+
+    </script>
+</body>
+</html> 
