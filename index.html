@@ -257,10 +257,16 @@ if(item < 1 || item > 3){
     let change = money - clothesprices[item-1];
 
     document.getElementById("receipt").innerHTML =
-    "<h2>Receipt</h2>" +
+    "<h2>BLANK STATE</h2>" +
+    "<hr>" +
+    "<h3>Receipt</h3>" +
+    "<p>Date: " + new Date().toLocaleDateString() + "</p>" +
+
+
+    
     "<p> Name: " + name + "</p>" +
     "<p>Item: " + clothingItems[item-1] + "</p>" +
-    "<p>Cost: $" + price + "</P>" +
+    "<p>Cost: $" + clothesprices[item-1] + "</P>" +
     "<p>Money Given: $" + money + "</p>" +
     "<p>Change: $" + change + "</p>";
     
