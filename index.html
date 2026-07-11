@@ -259,7 +259,7 @@ if(item < 1 || item > 3){
         return;
     }
 
-    let change = money - clothesprices[item-1];
+    let change = money - clothesprice[item-1];
 
     document.getElementById("receipt").innerHTML =
     "<h2>BLANK STATE</h2>" +
@@ -271,8 +271,8 @@ if(item < 1 || item > 3){
     
     "<p><b>Customer:</b> " + name + "</p>" +
     "<p><b>Item:</b> " + clothingItems[item-1] + "</p>" +
-    "<p><b>Cost:</b> $" + clothesprices[item-1] + "</P>" +
-    "<p><b>Total cost:</b> $" + clothingprices[item-1] + "</p>" +
+    "<p><b>Cost:</b> $" + clothesprice[item-1] + "</P>" +
+    "<p><b>Total cost:</b> $" + clothingprice[item-1] + "</p>" +
     "<p><b>Money Given:</b> $" + money + "</p>" +
     "<p><b>Change:</b> $" + change + "</p>";
     
