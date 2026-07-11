@@ -251,6 +251,11 @@ if(item < 1 || item > 3){
     let money = Number(
         prompt("How much money do you have?")
     );
+
+    if(isNaN(money)){
+        alert("please enter a valid amount.");
+        return;
+    }
     
     if(money < clothesprices[item-1]){
 
