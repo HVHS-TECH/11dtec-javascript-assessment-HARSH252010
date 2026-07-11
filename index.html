@@ -243,7 +243,7 @@ if(item < 1 || item > 3){
 }
     let name = prompt("Enter your name:");
 
-    if(name === "" || name === null) {
+    if(name === null || name.trim() === "") {
         alert("please enter your name.");
         return;
     }
