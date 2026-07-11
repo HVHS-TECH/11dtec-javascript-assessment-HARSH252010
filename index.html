@@ -242,6 +242,11 @@ if(item < 1 || item > 3){
     return;
 }
     let name = prompt("Enter your name:");
+
+    if(name === "") {
+        alert("please enter your name.");
+        return;
+    }
     
     let money = Number(
         prompt("How much money do you have?")
