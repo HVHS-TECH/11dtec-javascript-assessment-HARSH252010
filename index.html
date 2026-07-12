@@ -267,22 +267,8 @@
     
     function placeOrder(){
 
-       let item = Number(prompt(
-    "Choose an item:\n" +
-    "1. Essential Hoodie\n" +
-    "2. Classic T-shirt\n" +
-    "3. Slim Fit Jeans\n" 
-   /* "4. Urban Sneakers\n" +
-    "5. Formal Shirt\n" +
-    "6. Leather Jacket\n" +
-    "7. chelsea boots\n" +    
-    "8. Perfumes\n"?*/
-));
+  
 
-if(item < 1 || item > 3){
-    alert("Please choose 1, 2, or 3.");
-    return;
-}
     let name = prompt("Enter your name:");
 
     if(name === null || name.trim() === "") {
@@ -299,7 +285,7 @@ if(item < 1 || item > 3){
         return;
     }
     
-    if(money < clothesprices[item-1]){
+    
 
         alert("you do not have enough money!");
 
