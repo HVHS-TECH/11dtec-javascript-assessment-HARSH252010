@@ -325,6 +325,23 @@ if(item < 1 || item > 3){
     
     }
 
+function addItem(index){
+    quantities[index]++;
+    document.getElementById("qty" + index).innerhtml = quantities[index];
+
+}
+
+function removeItem(item){
+
+    if(quantities[index] > 0){
+        
+        quantities[index]--;
+
+        document.getElementById("qty") + index).innerhtml = quantities[index];
+        
+    }
+}
+
 </script>
 </body>
 </html> 
