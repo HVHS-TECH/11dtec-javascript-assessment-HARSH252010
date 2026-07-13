@@ -314,6 +314,23 @@
     "<p>Date: " + new Date().toLocaleDateString() + "</p>" + 
     "<p><b>Customer:</b> " + name + "</p>";
 
+    for(let i = 0; i < clothingItems.length; i++){
+
+        if(quantities[i] > 0){
+
+            receipt +=
+            "<p>" +
+            clothingItems[i] +
+            " x " +
+            quantities[i] +
+            " = $" +
+            (quantities[i] * clothesprices[i]) + 
+            "</p>;"
+
+        }
+        
+    }
+
     
     
     
