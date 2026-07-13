@@ -292,7 +292,16 @@
         total = total + (quantities[i] * clothesprices[i]);
 
     }
+
+    if(total === 0){
+        alert("please add at least one item.");
+        return;
+    }
     
+    if(money < total){
+        alert("You do not have enough money!");
+        return;
+    }
     
 
        
