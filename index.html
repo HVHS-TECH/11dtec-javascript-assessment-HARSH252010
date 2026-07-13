@@ -328,8 +328,16 @@
             "</p>;"
 
         }
-        
+
     }
+
+    receipt +=
+    "<hr>" +
+    "<p><b>Total:</b> $" + total + "</p>" +
+    "<p><b>Money Given:</b> $" + money + "</p>" +
+    "<p><b>Change:</b> $" + change + "</p>";
+
+    document.getElementById("receipt").innerHTML = receipt;
 
     
     
