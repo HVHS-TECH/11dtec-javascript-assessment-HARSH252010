@@ -290,16 +290,12 @@
     for(let i = 0; i <quantities.length; i++){
 
         total = total + (quantities[i] * clothesprices[i]);
-        
+
     }
     
     
 
-        alert("you do not have enough money!");
-
-        return;
-    }
-
+       
     let change = money - total;
 
     document.getElementById("receipt").innerHTML =
