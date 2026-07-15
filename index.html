@@ -54,6 +54,10 @@
     text-decoration:none;
 }
 
+.logo a:hover{
+    color:#cccccc;
+}
+
 .menu{
     display:flex;
     gap:30px;
@@ -62,6 +66,11 @@
 .menu a{
     color:white;
     text-decoration:none;
+    font-weight:bold;
+}
+
+.menu a:hover{
+    color:#bbbbbb;
 }
 
 
@@ -119,6 +128,8 @@
 #product2,
 #product3{
 
+    transition:0.3s;
+
     flex-direction:column;
     justify-content:flex-start;
     align-items:center;
@@ -126,7 +137,7 @@
     background:white;
     padding:20px;
 
-    border-radius:10px;
+    border-radius:8px;
     box-shadow:0px 3px 10px gray;
 
     height:auto;
@@ -138,8 +149,7 @@
 #product2:hover,
 #product3:hover{
 
-    transform:scale(1.03);
-    transition:0.3s;
+     transform:translateY(-6px);
 
 }
 
@@ -243,9 +253,9 @@ button:hover{
 
         <img src="" alt="Essential Hoodie" width="220">
         
-        <p>$80</p>
+        <p><strong>$80</strong></p>
 
-        <button onclick="addItem(0)"> Add to Cart</button>
+        <button onclick="addItem(0)">🛒 Add to Cart</button>
 
         <button onclick="addWishlist(0)">♡ Add to Wishlist</button>
 
@@ -264,9 +274,9 @@ button:hover{
         
         <img src="" alt="Classic T-Shirt" width="220">
 
-        <p>$45</p>
+        <p><strong>$45</strong></p>
 
-        <button onclick="addItem(1)">Add to Cart</button>
+        <button onclick="addItem(1)">🛒 Add to Cart</button>
 
         <button onclick="addWishlist(1)">♡ Add to Wishlist</button>
 
@@ -282,9 +292,9 @@ button:hover{
 
         <img src="" alt="Slim Fit Jeans" width="220">
 
-        <p>$70</p>
+        <p><strong>$70</strong></p>
 
-        <button onclick="addItem(2)">Add to Cart</button>
+        <button onclick="addItem(2)">🛒 Add to Cart</button>
 
         <button onclick="addWishlist(2)">♡ Add to Wishlist</button>
 
@@ -370,6 +380,8 @@ function addItem(index){
 
     updateCart();
 
+    localStorage.setItem("quantities", JSON.stringify(quantities));
+
 }
 
 function removeItem(index){
@@ -381,6 +393,8 @@ function removeItem(index){
         document.getElementById("qty" + index).innerHTML = quantities[index];
 
         updateCart();
+
+        localStorage.setItem("quantities", JSON.stringify(quantities));
 
     }
 }   
@@ -399,10 +413,18 @@ function removeItem(index){
 
     function addWishlist(index){
 
+        if(!wishlist.includes(clothingItems[index])){
+
         wishlist.push(clothingItems[index]);
 
         alert(clothingItems[index] + " added to your wishlist!");
     }
+    else{
+
+        alert("Already in wishlist.");
+
+    }
+}
 
 
 
