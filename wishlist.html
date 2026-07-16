@@ -130,6 +130,8 @@ displayWishlist();
 function displayWishlist(){
     let table = "";
 
+    document.getElementById("wishlistTable").innerHTML = table;
+
 }
 
 for(let i=0;i<wishlist.length;i++){
@@ -142,6 +144,14 @@ for(let i=0;i<wishlist.length;i++){
 "<td><button onclick='removeItem(" + i + ")'>Remove</button></td>" +
 
 "</tr>";
+
+}
+
+if(wishlist.length==0){
+
+table =
+
+"<tr><td colspan='2'>Your wishlist is empty.</td></tr>";
 
 }
     
