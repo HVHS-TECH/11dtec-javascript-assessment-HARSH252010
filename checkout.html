@@ -225,5 +225,43 @@ total += quantities[i]*clothesPrices[i];
 
 }
 
+if(total==0){
+
+alert("Your cart is empty.");
+
+return;
+
+}
+
+document.getElementById("message").innerHTML=
+
+"<h2>Order Complete!</h2>"+
+
+"<p>Thank you for shopping with Blank State.</p>"+
+
+"<p>Your payment of <strong>$"+total+"</strong> has been received.</p>"+
+
+"<p>Your order is being prepared for delivery.</p>";
+
+quantities=[0,0,0];
+
+localStorage.setItem(
+
+"quantities",
+
+JSON.stringify(quantities)
+
+);
+
+displayCheckout();
+
+}
+
+</script>
+
+</body>
+
+</html>
+
 
 
