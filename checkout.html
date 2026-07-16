@@ -223,45 +223,69 @@ document.getElementById("totalPrice").innerHTML="Total: $"+total;
 
 function completeOrder(){
 
-let total=0;
+    let total = 0;
 
-for(let i=0;i<quantities.length;i++){
+    for(let i = 0; i < quantities.length; i++){
 
-total += quantities[i]*clothesPrices[i];
+        total += quantities[i] * clothesPrices[i];
 
-}
+    }
 
-if(total==0){
+    if(total == 0){
 
-alert("Your cart is empty.");
+        alert("Your cart is empty.");
+        return;
 
-return;
+    }
 
-}
+    let name = document.getElementById("customerName").value;
 
-document.getElementById("message").innerHTML=
+    let money = Number(document.getElementById("money").value);
 
-"<h2>Order Complete!</h2>"+
+    if(name == ""){
 
-"<p>Thank you for shopping with Blank State.</p>"+
+        alert("Please enter your name.");
+        return;
 
-"<p>Your payment of <strong>$"+total+"</strong> has been received.</p>"+
+    }
 
-"<p>Your order is being prepared for delivery.</p>";
+    if(isNaN(money) || money <= 0){
 
-quantities=[0,0,0];
+        alert("Please enter the amount of money.");
+        return;
 
-localStorage.setItem(
+    }
 
-"quantities",
+    if(money < total){
 
-JSON.stringify(quantities)
+        alert("You do not have enough money.");
+        return;
 
-);
+    }
 
-displayCheckout();
+    let change = money - total;
 
-localStorage.removeItem("wishlist");
+    document.getElementById("message").innerHTML =
+
+    "<h2>Receipt</h2>" +
+
+    "<p><strong>Name:</strong> " + name + "</p>" +
+
+    "<p><strong>Total Cost:</strong> $" + total + "</p>" +
+
+    "<p><strong>Money Given:</strong> $" + money + "</p>" +
+
+    "<p><strong>Change:</strong> $" + change + "</p>" +
+
+    "<h3>✅ Thank you for shopping at Blank State!</h3>";
+
+    quantities = [0,0,0];
+
+    localStorage.setItem("quantities", JSON.stringify(quantities));
+
+    localStorage.removeItem("wishlist");
+
+    displayCheckout();
 
 }
 
