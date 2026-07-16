@@ -219,16 +219,6 @@ document.getElementById("totalPrice").innerHTML="Total: $"+total;
 }
 
 
-function placeOrder(){
-
-let total = 0;
-
-for(let i = 0; i < quantities.length; i++){
-
-    total += quantities[i] * clothesPrices[i];
-
-}
-
 if(total == 0){
 
     alert("Your cart is empty!");
