@@ -215,13 +215,13 @@ document.getElementById("totalPrice").innerHTML="Total: $"+total;
 
 function resetOrder(){
 
-    displayCart();
-
     quantities = [0,0,0];
 
     localStorage.setItem("quantities", JSON.stringify(quantities));
 
     document.getElementById("receipt").innerHTML = "";
+
+    displayCart();
 
 }
 
