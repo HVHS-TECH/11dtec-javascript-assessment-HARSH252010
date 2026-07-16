@@ -134,6 +134,38 @@ function displayWishlist(){
 
 }
 
+function removeItem(index){
+
+wishlist.splice(index,1);
+
+localStorage.setItem(
+
+"wishlist",
+
+JSON.stringify(wishlist)
+
+);
+
+displayWishlist();
+
+}
+
+function clearWishlist(){
+
+wishlist = [];
+
+localStorage.setItem(
+
+"wishlist",
+
+JSON.stringify(wishlist)
+
+);
+
+displayWishlist();
+
+}
+
 for(let i=0;i<wishlist.length;i++){
     table +=
 
@@ -169,3 +201,9 @@ table =
 
 let quantities =
 JSON.parse(localStorage.getItem("quantities")) || [0,0,0];
+
+</script>
+
+</body>
+
+</html>
