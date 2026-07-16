@@ -294,17 +294,23 @@ function completeOrder(){
 
     document.getElementById("message").innerHTML =
 
-    "<h2>Receipt</h2>" +
+"<h2>Receipt</h2>" +
 
-    "<p><strong>Name:</strong> " + name + "</p>" +
+"<p><strong>Name:</strong> " + name + "</p>" +
 
-    "<p><strong>Total Cost:</strong> $" + total + "</p>" +
+"<p><strong>Items Purchased:</strong></p>" +
 
-    "<p><strong>Money Given:</strong> $" + money + "</p>" +
+createReceiptItems() +
 
-    "<p><strong>Change:</strong> $" + change + "</p>" +
+"<hr>" +
 
-    "<h3>✅ Thank you for shopping at Blank State!</h3>";
+"<p><strong>Total Cost:</strong> $" + total + "</p>" +
+
+"<p><strong>Money Given:</strong> $" + money + "</p>" +
+
+"<p><strong>Change:</strong> $" + change + "</p>" +
+
+"<h3>✅ Thank you for shopping at Blank State!</h3>";
 
     quantities = [0,0,0];
 
