@@ -119,6 +119,31 @@ button:hover{
         </table>
 
         <br>
+
+   <script>
+   
+   let wishlist =
+JSON.parse(localStorage.getItem("wishlist")) || [];
+
+displayWishlist();
+
+function displayWishlist(){
+    let table = "";
+
+}
+
+for(let i=0;i<wishlist.length;i++){
+    table +=
+
+"<tr>" +
+
+"<td>" + wishlist[i] + "</td>" +
+
+"<td><button onclick='removeItem(" + i + ")'>Remove</button></td>" +
+
+"</tr>";
+
+}
     
 
 
