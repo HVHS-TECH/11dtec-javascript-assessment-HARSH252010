@@ -221,6 +221,33 @@ document.getElementById("totalPrice").innerHTML="Total: $"+total;
 
 }
 
+function createReceiptItems(){
+
+    let text = "<ul>";
+
+    for(let i = 0; i < clothingItems.length; i++){
+
+        if(quantities[i] > 0){
+
+            text +=
+            "<li>" +
+            clothingItems[i] +
+            " × " +
+            quantities[i] +
+            " = $" +
+            (quantities[i] * clothesPrices[i]) +
+            "</li>";
+
+        }
+
+    }
+
+    text += "</ul>";
+
+    return text;
+
+}
+
 function completeOrder(){
 
     let total = 0;
