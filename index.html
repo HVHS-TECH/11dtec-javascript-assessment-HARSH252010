@@ -427,11 +427,14 @@ function removeItem(index){
         );
         
 
-        alert(clothingItems[index] + " added to your wishlist!");
+        document.getElementById("message").innerHTML =
+        clothingItems[index] + " added to your wishlist!";
     }
+
     else{
 
-        alert("Already in wishlist.");
+        document.getElementById("message").innerHTML =
+        "This item is already in your wishlist.";
 
     }
 }
