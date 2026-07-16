@@ -369,7 +369,8 @@ button:hover{
         0
     ];
     
-    let wishlist = [];
+    let wishlist = 
+    JSON.parse(localStorage.getItem("wishlist")) ||[];
     
 
 function addItem(index){
