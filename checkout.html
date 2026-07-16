@@ -159,4 +159,71 @@ Complete Purchase
 
 ];
 
+let clothesPrices=[
+
+80,
+
+45,
+
+70
+
+];
+
+let quantities=
+
+JSON.parse(localStorage.getItem("quantities")) || [0,0,0];
+
+displayCheckout();
+
+function displayCheckout(){
+
+let table="";
+
+let total=0;
+
+for(let i=0;i<clothingItems.length;i++){
+
+if(quantities[i]>0){
+
+table +=
+
+"<tr>"+
+
+    "<td>"+clothingItems[i]+"</td>"+
+
+"<td>"+quantities[i]+"</td>"+
+
+"<td>$"+(quantities[i]*clothesPrices[i])+"</td>"+
+
+"</tr>";
+
+total += quantities[i]*clothesPrices[i];
+
+   }
+
+}
+
+if(table==""){
+
+table="<tr><td colspan='3'>No items to checkout.</td></tr>";
+
+}
+
+document.getElementById("checkoutTable").innerHTML=table;
+
+document.getElementById("totalPrice").innerHTML="Total: $"+total;
+
+}
+
+function completeOrder(){
+
+let total=0;
+
+for(let i=0;i<quantities.length;i++){
+
+total += quantities[i]*clothesPrices[i];
+
+}
+
+
 
