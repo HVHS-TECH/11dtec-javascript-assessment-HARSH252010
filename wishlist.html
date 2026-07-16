@@ -188,32 +188,6 @@ displayWishlist();
 
 }
 
-for(let i=0;i<wishlist.length;i++){
-    table +=
-
-"<tr>" +
-
-"<td>" + wishlist[i] + "</td>" +
-
-"<td><button onclick='removeItem(" + i + ")'>Remove</button></td>" +
-
-"</tr>";
-
-}
-
-if(wishlist.length==0){
-
-table =
-
-"<tr><td colspan='2'>Your wishlist is empty.</td></tr>";
-
-}
-    
-
-
-
-
-
 
 let quantities =
 JSON.parse(localStorage.getItem("quantities")) || [0,0,0];
