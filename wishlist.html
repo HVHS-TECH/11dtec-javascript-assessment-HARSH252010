@@ -166,15 +166,15 @@ function displayWishlist(){
 
 }
 
-function removeItem(index){
+    function removeItem(index){
 
-wishlist.splice(index,1);
+    wishlist.splice(index,1);
 
-localStorage.setItem(
+    localStorage.setItem(
 
-"wishlist",
+    "wishlist",
 
-JSON.stringify(wishlist)
+    JSON.stringify(wishlist)
 
 );
 
@@ -198,6 +198,7 @@ JSON.stringify(wishlist)
 
 displayWishlist();
 
+}
 }
 
 
