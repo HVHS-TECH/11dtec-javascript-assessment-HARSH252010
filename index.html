@@ -363,10 +363,11 @@ button:hover{
         70
     ];
 
-    let quantities = [
-        0,
-        0,
-        0
+    let quantities =
+JSON.parse(localStorage.getItem("quantities")) || [
+    0,
+    0,
+    0
     ];
     
     let wishlist = 
@@ -423,7 +424,7 @@ function removeItem(index){
             JSON.stringify(wishlist)
         );
         
-        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        
 
         alert(clothingItems[index] + " added to your wishlist!");
     }
