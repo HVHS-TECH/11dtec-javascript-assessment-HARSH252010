@@ -417,6 +417,11 @@ function removeItem(index){
         if(!wishlist.includes(clothingItems[index])){
 
         wishlist.push(clothingItems[index]);
+
+         localStorage.setItem(
+            "wishlist",
+            JSON.stringify(wishlist)
+        );
         
         localStorage.setItem("wishlist", JSON.stringify(wishlist));
 
