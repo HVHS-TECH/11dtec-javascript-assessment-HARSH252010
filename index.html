@@ -411,6 +411,11 @@ JSON.parse(localStorage.getItem("quantities")) || [
     0,
     0
     ];
+
+    if (quantities.length < 4) {
+    quantities = [0,0,0,0];
+    localStorage.setItem("quantities", JSON.stringify(quantities));
+}
     
     let wishlist = 
     JSON.parse(localStorage.getItem("wishlist")) ||[];
